@@ -1,10 +1,10 @@
-﻿[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+﻿using ConsoleUI;
+
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 static void myMain() 
 {
-
-
-  log4net.ILog log = log4net.LogManager.GetLogger("Program.cs");
+  log4net.ILog log = LogHelper.GetLogger();
 
   Console.WriteLine("Hello, World!");
 
