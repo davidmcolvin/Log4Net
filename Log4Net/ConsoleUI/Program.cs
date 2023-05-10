@@ -4,15 +4,26 @@
 
 static void myMain() 
 {
-  log4net.ILog log = LogHelper.GetLogger();
+  log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType); //LogHelper.GetLogger();
 
   Console.WriteLine("Hello, World!");
   log.Debug("Developer: Tutorial was run");
   log.Info("Maintenance: water pump turned on");
   log.Warn("Maintenance: the water pump is getting hot");
-  log.Error("This is my error message");
-  log.Fatal("This is my error message");
-  log.Fatal("This is my error message2");
+
+  var i = 0;
+
+  try
+  {
+    var x = 10 / i;
+  }
+  catch (DivideByZeroException ex)
+  {
+
+    log.Error("Developer: we tried to divide by zero again");
+  }
+
+  log.Fatal("Maintenance: the water pump is exploded");
 }
 
 myMain();
