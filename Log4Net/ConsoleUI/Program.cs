@@ -23,7 +23,7 @@ static void myMain()
     log.Error("Developer: we tried to divide by zero again");
   }
 
-  log.Fatal("Maintenance: the water pump is exploded");
+  log.Fatal("h");
 }
 
 myMain();
